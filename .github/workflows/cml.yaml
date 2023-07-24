@@ -39,6 +39,8 @@ jobs:
               --show-vega main > vega.json
           vl2png vega.json -s 1.5 > confusion_plot.png
           echo "![](./confusion_plot.png)" >> report.md
+
+          # Create the final report
           cml comment create report.md
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
